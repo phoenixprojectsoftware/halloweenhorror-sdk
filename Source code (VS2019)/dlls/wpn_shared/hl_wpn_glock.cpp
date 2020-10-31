@@ -73,13 +73,13 @@ void CGlock::Precache(void)
 int CGlock::GetItemInfo(ItemInfo* p)
 {
 	p->pszName = STRING(pev->classname);
-	p->pszAmmo1 = "9mm";
+	p->pszAmmo1 = "battery";
 	p->iMaxAmmo1 = _9MM_MAX_CARRY;
 	p->pszAmmo2 = NULL;
 	p->iMaxAmmo2 = -1;
 	p->iMaxClip = GLOCK_MAX_CLIP;
-	p->iSlot = 1;
-	p->iPosition = 0;
+	p->iSlot = 0;
+	p->iPosition = 1;
 	p->iFlags = 0;
 	p->iId = m_iId = WEAPON_GLOCK;
 	p->iWeight = GLOCK_WEIGHT;
@@ -89,7 +89,6 @@ int CGlock::GetItemInfo(ItemInfo* p)
 
 BOOL CGlock::Deploy()
 {
-	m_pPlayer->FlashlightTurnOn();;
 	// pev->body = 1;
 	return DefaultDeploy("models/v_9mmhandgun.mdl", "models/p_9mmhandgun.mdl", GLOCK_DRAW, "onehanded", /*UseDecrement() ? 1 : 0*/ 0);
 }
@@ -208,7 +207,7 @@ class CGlockAmmo : public CBasePlayerAmmo
 	}
 };
 LINK_ENTITY_TO_CLASS(ammo_glockclip, CGlockAmmo);
-LINK_ENTITY_TO_CLASS(ammo_9mmclip, CGlockAmmo);
+LINK_ENTITY_TO_CLASS(ammo_battery, CGlockAmmo);
 
 
 
