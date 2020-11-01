@@ -1929,7 +1929,7 @@ void CBasePlayer::PreThink(void)
 		}
 		else if ( !FBitSet( pev->flags, FL_ONGROUND ) || FBitSet( pTrain->pev->spawnflags, SF_TRACKTRAIN_NOCONTROL ) || (pev->button & (IN_MOVELEFT|IN_MOVERIGHT) ) )
 		{
-			// Turn off the train if you jump, strafe, or the train controls go dead
+			// Turn off the train if you jumpz, strafe, or the train controls go dead
 			m_afPhysicsFlags &= ~PFLAG_ONTRAIN;
 			m_iTrain = TRAIN_NEW|TRAIN_OFF;
 			return;

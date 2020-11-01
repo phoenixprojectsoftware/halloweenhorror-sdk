@@ -1569,7 +1569,7 @@ char *sOldClassModelFiles[] =
 char *sNewWeaponPModels[] =
 {
 	"models/p_9mmhandgun.mdl",
-	"models/p_crowbar.mdl",
+	"models/weapons/bat/p_bat.mdl",
 	"models/p_egon.mdl",
 	"models/p_glauncher.mdl",
 	"models/p_grenade.mdl",

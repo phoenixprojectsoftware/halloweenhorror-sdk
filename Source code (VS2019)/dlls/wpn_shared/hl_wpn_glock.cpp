@@ -38,12 +38,13 @@ LINK_ENTITY_TO_CLASS(weapon_glock, CGlock);
 LINK_ENTITY_TO_CLASS(weapon_9mmhandgun, CGlock);
 
 
+
 void CGlock::Spawn()
 {
 	pev->classname = MAKE_STRING("weapon_9mmhandgun"); // hack to allow for old names
 	Precache();
 	m_iId = WEAPON_GLOCK;
-	SET_MODEL(ENT(pev), "models/w_9mmhandgun.mdl");
+	SET_MODEL(ENT(pev), "models/weapons/flashlight/w_flashlight.mdl");
 
 	m_iDefaultAmmo = GLOCK_DEFAULT_GIVE;
 
@@ -53,9 +54,9 @@ void CGlock::Spawn()
 
 void CGlock::Precache(void)
 {
-	PRECACHE_MODEL("models/v_9mmhandgun.mdl");
-	PRECACHE_MODEL("models/w_9mmhandgun.mdl");
-	PRECACHE_MODEL("models/p_9mmhandgun.mdl");
+	PRECACHE_MODEL("models/weapons/flashlight/v_flashlight.mdl");
+	PRECACHE_MODEL("models/weapons/flashlight/w_flashlight.mdl");
+	PRECACHE_MODEL("models/weapons/flashlight/p_flashlight.mdl");
 
 	m_iShell = PRECACHE_MODEL("models/shell.mdl");// brass shell
 
@@ -90,7 +91,7 @@ int CGlock::GetItemInfo(ItemInfo* p)
 BOOL CGlock::Deploy()
 {
 	// pev->body = 1;
-	return DefaultDeploy("models/v_9mmhandgun.mdl", "models/p_9mmhandgun.mdl", GLOCK_DRAW, "onehanded", /*UseDecrement() ? 1 : 0*/ 0);
+	return DefaultDeploy("models/weapons/flashlight/v_flashlight.mdl", "models/weapons/flashlight/p_flashlight.mdl", GLOCK_DRAW, "onehanded", /*UseDecrement() ? 1 : 0*/ 0);
 }
 
 void CGlock::SecondaryAttack(void)
@@ -108,6 +109,7 @@ void CGlock::PrimaryAttack(void)
 	else
 	{
 		m_pPlayer->FlashlightTurnOn();
+		m_pPlayer->pev->effects = (int)(m_pPlayer->pev->effects) | EF_MUZZLEFLASH;
 		m_pPlayer->m_flNextAttack = UTIL_WeaponTimeBase() + 0.5;
 		SendWeaponAnim(GLOCK_SHOOT);
 	}
@@ -124,6 +126,7 @@ void CGlock::GlockFire(float flSpread, float flCycleTime, BOOL fUseAutoAim)
 	else
 	{
 		m_pPlayer->FlashlightTurnOn();
+		m_pPlayer->pev->effects = (int)(m_pPlayer->pev->effects) | EF_MUZZLEFLASH;
 		m_pPlayer->m_flNextAttack = UTIL_WeaponTimeBase() + 0.5;
 		SendWeaponAnim(GLOCK_SHOOT);
 	}

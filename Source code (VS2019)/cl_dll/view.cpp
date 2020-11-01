@@ -1475,7 +1475,7 @@ int V_FindViewModelByWeaponModel(int weaponindex)
 		{ "models/p_mini.mdl",			"models/v_tfac.mdl"			},
 		{ "models/p_sniper.mdl",		"models/v_tfc_sniper.mdl"	},
 		{ "models/p_umbrella.mdl",		"models/v_umbrella.mdl"		},
-		{ "models/p_crowbar.mdl",		"models/v_tfc_crowbar.mdl"	},
+		{ "models/weapons/bat/p_bat.mdl",		"models/v_tfc_crowbar.mdl"	},
 		{ "models/p_spanner.mdl",		"models/v_tfc_spanner.mdl"	},
 		{ "models/p_knife.mdl",			"models/v_tfc_knife.mdl"	},
 		{ "models/p_medkit.mdl",		"models/v_tfc_medkit.mdl"	},
@@ -1491,7 +1491,7 @@ int V_FindViewModelByWeaponModel(int weaponindex)
 		{ "models/p_spygun.mdl",		"models/v_tfc_pistol.mdl"	},
 #endif
 		{ "models/p_crossbow.mdl",		"models/v_crossbow.mdl"		},
-		{ "models/p_crowbar.mdl",		"models/v_crowbar.mdl"		},
+		{ "models/weapons/bat/p_bat.mdl",		"models/weapons/bat/v_bat.mdl"		},
 		{ "models/p_egon.mdl",			"models/v_egon.mdl"			},
 		{ "models/p_gauss.mdl",			"models/v_gauss.mdl"		},
 		{ "models/p_9mmhandgun.mdl",	"models/v_9mmhandgun.mdl"	},
