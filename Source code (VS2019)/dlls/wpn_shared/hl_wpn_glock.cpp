@@ -103,11 +103,13 @@ void CGlock::PrimaryAttack(void)
 	{
 		m_pPlayer->FlashlightTurnOff();
 		m_pPlayer->m_flNextAttack = UTIL_WeaponTimeBase() + 0.5;
+		SendWeaponAnim(GLOCK_SHOOT);
 	}
 	else
 	{
 		m_pPlayer->FlashlightTurnOn();
 		m_pPlayer->m_flNextAttack = UTIL_WeaponTimeBase() + 0.5;
+		SendWeaponAnim(GLOCK_SHOOT);
 	}
 }
 
@@ -117,11 +119,13 @@ void CGlock::GlockFire(float flSpread, float flCycleTime, BOOL fUseAutoAim)
 	{
 		m_pPlayer->FlashlightTurnOff();
 		m_pPlayer->m_flNextAttack = UTIL_WeaponTimeBase() + 0.5;
+		SendWeaponAnim(GLOCK_SHOOT);
 	}
 	else
 	{
 		m_pPlayer->FlashlightTurnOn();
 		m_pPlayer->m_flNextAttack = UTIL_WeaponTimeBase() + 0.5;
+		SendWeaponAnim(GLOCK_SHOOT);
 	}
 }
 
