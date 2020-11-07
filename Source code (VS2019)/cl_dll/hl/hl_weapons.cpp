@@ -53,6 +53,7 @@ vec3_t previousorigin;
 
 // HLDM Weapon placeholder entities.
 CGlock g_Glock;
+CFlashlight g_Flashlight;
 CCrowbar g_Crowbar;
 CPython g_Python;
 CMP5 g_Mp5;
@@ -690,6 +691,10 @@ void HUD_WeaponsPostThink( local_state_s *from, local_state_s *to, usercmd_t *cm
 		
 		case WEAPON_GLOCK:
 			pWeapon = &g_Glock;
+			break;
+
+		case WEAPON_FLASHLIGHT:
+			pWeapon = &g_Flashlight;
 			break;
 		
 		case WEAPON_PYTHON:

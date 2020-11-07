@@ -329,6 +329,10 @@ void W_Precache(void)
 	UTIL_PrecacheOtherWeapon( "weapon_9mmhandgun" );
 	UTIL_PrecacheOther( "ammo_9mmclip" );
 
+	// flashlight
+	UTIL_PrecacheOtherWeapon("weapon_flashlight");
+	UTIL_PrecacheOther("ammo_9mmclip");
+
 	// mp5
 	UTIL_PrecacheOtherWeapon( "weapon_9mmAR" );
 	UTIL_PrecacheOther( "ammo_9mmAR" );
